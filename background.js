@@ -4,3 +4,9 @@ chrome.runtime.onInstalled.addListener(() => {
     title: '<img> タグに変換する',
   });
 })
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === 'replaceImage') {
+    console.log('replaceImage');
+  }
+})
