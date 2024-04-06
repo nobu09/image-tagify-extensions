@@ -8,6 +8,14 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === 'replaceImage') {
-    console.log('replaceImage');
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: () => {
+        const selection = window.getSelection().toString();
+        console.log(selection)
+        const imgTag = '<img src="' + selection + '">';
+        selection = imgTag;
+      }
+    });
   }
-})
+});
