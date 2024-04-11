@@ -7,14 +7,17 @@ chrome.runtime.onInstalled.addListener(() => {
 })
 
 function replaceImage() {
-  let selection = window.getSelection().toString();
+  let selection = window.getSelection();
+  if (!selection.rangeCount) return;
+  let range = selection.getRangeAt(0);
+
+  let selectionText = selection.toString();
   let regex = /\((.*?)\)/;
-  let match = selection.match(regex);
+  let match = selectionText.match(regex);
   if (match) {
     let url = match[1];
-    let imgTag = document.createElement('img');
-    imgTag.src = url;
-    console.log(imgTag);
+    let imgTagText = `<img width=500 src="${url}">`; 
+    console.log(imgTagText);
   }
   // if (!selection.rangeCount) return;
 
