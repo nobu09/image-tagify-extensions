@@ -18,6 +18,9 @@ function replaceImage() {
     let url = match[1];
     let imgTagText = `<img width=500 src="${url}">`; 
     console.log(imgTagText);
+    range.deleteContents();
+    let textNode = document.createTextNode(imgTagText);
+    range.insertNode(textNode);
   }
   // if (!selection.rangeCount) return;
 
