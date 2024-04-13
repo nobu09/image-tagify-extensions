@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'replaceImage',
     title: '<img> タグに変換する',
-    contexts: ['selection']
+    contexts: ['editable'] // 編集可能なテキストフィールド上で右クリックしたときに表示
   });
 })
 
