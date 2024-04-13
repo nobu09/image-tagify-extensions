@@ -14,7 +14,6 @@ function replaceImage() {
   let match = textAreaText.match(regex);
   if (match) {
     let url = match[1];
-    console.log(url);
     let imgTagText = `<img width=500 src="${url}">`;
     textarea.value = textarea.value.replace(regex, imgTagText);
   }
@@ -26,6 +25,5 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       target: { tabId: tab.id },
       function: replaceImage,
     })
-    .then(() => console.log("success"))
   }
 });
