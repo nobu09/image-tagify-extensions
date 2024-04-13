@@ -10,7 +10,7 @@ function replaceImage() {
   let textarea = document.activeElement;
   if (textarea.tagName !== 'TEXTAREA') return;
   let textAreaText = textarea.value;
-  let regex = /!\[icon\]\((.*?)\)/;
+  let regex = /!\[.*\]\((.*?)\)/;
   let match = textAreaText.match(regex);
   if (match) {
     let url = match[1];
