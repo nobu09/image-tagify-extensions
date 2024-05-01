@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'replaceImage',
-    title: '<img> タグに変換する',
+    title: 'imgタグに変換',
     contexts: ['editable'] // 編集可能なテキストフィールド上で右クリックしたときに表示
   });
 })
@@ -14,7 +14,7 @@ function replaceImage() {
   let match = textAreaText.match(regex);
   if (match) {
     let url = match[1];
-    let imgTagText = `<img width=500 src="${url}">`;
+    let imgTagText = `<img width="500" src="${url}">`;
     textarea.value = textarea.value.replace(regex, imgTagText);
   }
 }
