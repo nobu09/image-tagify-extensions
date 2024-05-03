@@ -14,7 +14,7 @@ function replaceImage() {
   let match = textAreaText.match(regex);
   if (match) {
     let url = match[1];
-    let imgTagText = `<img width="500" src="${url}">`;
+    let imgTagText = `<img width="500" src="${url}" />`;
     textarea.value = textarea.value.replace(regex, imgTagText);
   }
 }
