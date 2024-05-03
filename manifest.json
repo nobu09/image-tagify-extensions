@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Image Tagify",
+  "name": "Markdown to ImageTag",
   "description": "Replace markdown format images pasted into text areas (such as GitHub) with image tags",
   "version": "1.0",
   "icons": {
